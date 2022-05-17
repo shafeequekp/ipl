@@ -5,6 +5,7 @@ from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.permissions import IsAuthenticated
 
 from applications.match.models import Match, Season, Delivery
 
@@ -35,6 +36,7 @@ class MostMatchWinnersView(APIView):
     @:param season: Optional
     @:return: dict: team_name: str, win_count: int
     """
+    permission_classes = (IsAuthenticated, )
 
     def get(self, request):
         match_queryset = Match.objects.all()
@@ -58,6 +60,7 @@ class MostTossWinnerView(APIView):
     @:param season: Optional
     @:return: dict: team_name: str, toss_win_count: int
     """
+    permission_classes = (IsAuthenticated, )
 
     def get(self, request):
         match_queryset = Match.objects.all()
@@ -83,6 +86,7 @@ class MostPlayerOfMatchWinnerView(APIView):
     @:param season: Optional
     @:return: dict: player_name: str, player_of_the_match_count: int
     """
+    permission_classes = (IsAuthenticated, )
 
     def get(self, request):
         match_queryset = Match.objects.all()
@@ -106,7 +110,8 @@ class MaximumMatchWinnerView(APIView):
     """
      Views for find a team won maximum number of matches in the whole season
      @:return:  dict: team_name: str, match_win_count: int
-     """
+    """
+    permission_classes = (IsAuthenticated, )
 
     def get(self, request):
         maximum_match_winner = Match.objects.values('match_winner__name').annotate(
@@ -125,6 +130,7 @@ class TossWonBatSelectedTeamView(APIView):
     Views for find percentage of teams decided to bat when they won the toss
     @:return: dict: toss_won_and_bat_selected_percentage: int
     """
+    permission_classes = (IsAuthenticated, )
 
     def get(self, request):
         toss_bat_selected_count = Match.objects.filter(toss_decision=Match.BAT).count()
@@ -139,6 +145,7 @@ class LocationHostedMostMatchView(APIView):
     @:param season: Optional
     @:return: dict: venue: str, match_count: int
     """
+    permission_classes = (IsAuthenticated, )
 
     def get(self, request):
         queryset = Match.objects.all()
@@ -162,6 +169,7 @@ class TeamWonHighestMarginView(APIView):
     @:param season: Optional
     @:return: dict: high_run_margin_winner: str, win_by_runs: int
     """
+    permission_classes = (IsAuthenticated, )
 
     def get(self, request):
         queryset = Match.objects.all()
@@ -185,6 +193,7 @@ class TeamWonByHighestWicketView(APIView):
     @:param season: Optional
     @:return: dict: high_wicket_margin_winner: str, win_by_wickets: int
     """
+    permission_classes = (IsAuthenticated, )
 
     def get(self, request):
         queryset = Match.objects.all()
@@ -207,6 +216,7 @@ class TeamWonTossAndMatchView(APIView):
     Views for find how many times has a team won the toss and the match
     @:return: dict: team_name: str, win_count: int
     """
+    permission_classes = (IsAuthenticated, )
 
     def get(self, request):
         queryset = Match.objects.all()
@@ -228,6 +238,7 @@ class MostCatchesByFielderView(APIView):
     @:param season: Optional
     @:return: dict: fielder__name: str, match: int, catch_count: int
     """
+    permission_classes = (IsAuthenticated, )
 
     def get(self, request):
         queryset = Delivery.objects.all()
@@ -252,6 +263,7 @@ class HighestRunOfTheSeasonView(APIView):
     @:param season: Optional
     @:return: dict: high_score_batsman: str, match__id: int, total_runs: int
     """
+    permission_classes = (IsAuthenticated, )
 
     def get(self, request):
         queryset = Delivery.objects.all()

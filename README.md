@@ -36,17 +36,17 @@ python manage.py update_db
 ### List of Routes
 | Request | Endpoint | Parameters | Details |
 | --- | --- | --- | --- |
-| `GET` | `/api/most-won-teams/`| season:int Optional | Get most won 4 teams, use season parameter for filter by a season |
-| `GET` | `/api/most-toss-winner/`| season:int Optional | Get most toss won team, use season parameter for filter by a season |
-| `GET` | `/api/most-player-of-the-match-winner`| season:int Optional | Get most player of the match award winner, use season parameter for filter by a season |
-| `GET` | `/api/maximum-won-team`|  | Get maximum matches won team |
-| `GET` | `/api/toss-won-bat-selected-teams`|  | Get percentage of teams decided to BAT first |
-| `GET` | `/api/location-hosted-most-match`| season:int Optional | Get most hosted venue |
-| `GET` | `/api/team-won-highest-margin-run`| season:int Optional | Get highest margin win by run |
-| `GET` | `/api/team-won-by-highest-wicket-margin`| season:int Optional | Get highest wicket win |
-| `GET` | `/api/team-won-toss-and-match`| season:int Optional | Get team which won toss and match |
-| `GET` | `/api/high-score-player`| season:int Optional | Get a batsman who score highest run in a match  |
-| `GET` | `/api/most-catches-by-a-fielder`| season:int Optional | Get a fielder with maximum catch in a match  |
+| `GET` | `/api/most-won-teams/`| season:int Optional, Header: Token Required | Get most won 4 teams, use season parameter for filter by a season |
+| `GET` | `/api/most-toss-winner/`| season:int Optional, Header: Token Required | Get most toss won team, use season parameter for filter by a season |
+| `GET` | `/api/most-player-of-the-match-winner`| season:int Optional, Header: Token Required | Get most player of the match award winner, use season parameter for filter by a season |
+| `GET` | `/api/maximum-won-team`|  Header: Token Required | Get maximum matches won team |
+| `GET` | `/api/toss-won-bat-selected-teams`|  Header: Token Required | Get percentage of teams decided to BAT first |
+| `GET` | `/api/location-hosted-most-match`| season:int Optional, Header: Token Required | Get most hosted venue |
+| `GET` | `/api/team-won-highest-margin-run`| season:int Optional, Header: Token Required | Get highest margin win by run |
+| `GET` | `/api/team-won-by-highest-wicket-margin`| season:int Optional, Header: Token Required | Get highest wicket win |
+| `GET` | `/api/team-won-toss-and-match`| season:int Optional, Header: Token Required | Get team which won toss and match |
+| `GET` | `/api/high-score-player`| season:int Optional, Header: Token Required | Get a batsman who score highest run in a match  |
+| `GET` | `/api/most-catches-by-a-fielder`| season:int Optional, Header: Token Required | Get a fielder with maximum catch in a match  |
 
 
 
