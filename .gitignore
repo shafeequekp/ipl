@@ -1,0 +1,10 @@
+*.pyc
+nbproject
+*.db
+.idea/*
+.DS_Store
+*.rdb
+*.log
+
+staticfiles/*
+../backends/media/*
