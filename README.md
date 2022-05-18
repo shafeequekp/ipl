@@ -56,7 +56,3 @@ python manage.py runserver
 
 ```
 
-### Execute tests
-```
-python -m pytest
-```
