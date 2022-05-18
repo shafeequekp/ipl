@@ -18,7 +18,7 @@ class MatchAdmin(admin.ModelAdmin):
 
 
 class DeliveryAdmin(admin.ModelAdmin):
-    list_display = ['__str__', 'total_runs', 'player_dismissed', ]
+    list_display = ['__str__', 'total_runs', 'player_dismissed', 'dismissal_kind', ]
 
 
 admin.site.register(Team, TeamAdmin)

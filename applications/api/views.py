@@ -241,7 +241,7 @@ class MostCatchesByFielderView(APIView):
     permission_classes = (IsAuthenticated, )
 
     def get(self, request):
-        queryset = Delivery.objects.all()
+        queryset = Delivery.objects.filter(dismissal_kind='caught')
         if request.GET.get('season'):
             try:
                 season = Season.objects.get(name=request.GET.get('season'))
