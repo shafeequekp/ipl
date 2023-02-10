@@ -10,8 +10,8 @@ class Command(BaseCommand):
     help = 'Import data from Deliveries.xlsx and IPL Matches.xlsx files'
 
     def handle(self, *args, **kwargs):
-        loc = "path/matches.xlsx"
-        delivery_file_loc = "path/deliveries.xlsx"
+        loc = "/home/classy-pc/Downloads/matches.xlsx"
+        delivery_file_loc = "/home/classy-pc/Downloads/Match Deliveries.xlsx"
 
         dbframe = pd.read_excel(loc, sheet_name='matches')
 
@@ -117,8 +117,6 @@ class Command(BaseCommand):
                                                                       dismissal_kind=dbframe.DismissalKind,
                                                                       fielder=fielder,
                                                                       )
-
-
 
         print("COMPLETED DELIVERY, STARTED PLAYER OF THE MATCH UPDATE")
 

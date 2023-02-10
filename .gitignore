@@ -5,6 +5,4 @@ nbproject
 .DS_Store
 *.rdb
 *.log
-
-staticfiles/*
-../backends/media/*
+db.sqlite3

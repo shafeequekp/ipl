@@ -1,7 +1,7 @@
 from django.db import models
 
 from django_extensions.db.fields import (ModificationDateTimeField,
-                                        CreationDateTimeField, AutoSlugField)
+                                         CreationDateTimeField, AutoSlugField)
 
 
 class DateBaseModel(models.Model):

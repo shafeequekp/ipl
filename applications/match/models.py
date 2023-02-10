@@ -21,6 +21,7 @@ class Player(DateBaseModel):
     slug = AutoSlugField(populate_from='name', max_length=255, editable=True, unique=True)
     profile_image = models.ImageField(max_length=255, blank=True, null=True)
     team = models.ForeignKey(Team, on_delete=models.CASCADE, null=True, blank=True)
+    player_of_the_match = models.IntegerField(default=0)
 
     def __str__(self):
         return f"{self.name}"

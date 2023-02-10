@@ -234,7 +234,7 @@ class TeamWonTossAndMatchView(APIView):
 
 class MostCatchesByFielderView(APIView):
     """
-    Views for find most catches by a fielder
+    Views for find most catches by a fielder in a match.
     @:param season: Optional
     @:return: dict: fielder__name: str, match: int, catch_count: int
     """
